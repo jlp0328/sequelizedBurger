@@ -7,6 +7,7 @@ var exphbs = require("express-handlebars");
 var app = express();
 var port = process.env.PORT || 8080;
 
+var db = require("./models");
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
 
@@ -28,10 +29,14 @@ var connection = mysql.createConnection({
   database: "burgers2_db"
 });
 
+require("./routes/api-routes.js")(app);
 
-// Import routes and give the server access to them.
-var routes = require("./controllers/burgers_controllers.js");
+// Starting our express app
 
-app.use("/", routes);
+//Need to synchronize with the database. We do not want to run the database until the database has been initialized. Promise-based (.then)...Don't want to start server until we are connected to our database.
 
-app.listen(port);
+db.sequelize.sync().then(function() {
+  app.listen(port, function() {
+    console.log("App listening on PORT " + port);
+  });
+});

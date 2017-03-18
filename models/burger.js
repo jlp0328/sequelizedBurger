@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes){
         defaultValue: false
       }
     });
-    return Todo;
+    return Burger;
     //Anything that runs this function and returns
     //Make variable consistent with the filename
 

@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jlp0328/Burger.git"
+    "url": "git+https://github.com/jlp0328/sequelizedBurger.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jlp0328/Burger/issues"
+    "url": "https://github.com/jlp0328/sequelizedBurger/issues"
   },
-  "homepage": "https://github.com/jlp0328/Burger#readme",
+  "homepage": "https://github.com/jlp0328/sequelizedBurger#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
