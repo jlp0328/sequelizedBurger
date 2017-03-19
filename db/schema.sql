@@ -1,7 +1,7 @@
-CREATE DATABASE burgers2_db;
-USE burgers2_db;
+CREATE DATABASE sequelizeburger_db;
+USE sequelizeburger_db;
 
-CREATE TABLE burgers(
+CREATE TABLE burger(
   id int NOT NULL AUTO_INCREMENT,
   burger_name varchar(250) NOT NULL,
   devoured BOOLEAN DEFAULT TRUE,

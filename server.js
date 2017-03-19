@@ -8,11 +8,12 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 var db = require("./models");
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(process.cwd() + "/public"));
 
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("./public"));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -26,10 +27,12 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "burgers2_db"
+  database: "sequelizeburger_db"
 });
 
-require("./routes/api-routes.js")(app);
+
+var routes = require("./controllers/burgers_controllers.js");
+app.use("/", routes);
 
 // Starting our express app
 
