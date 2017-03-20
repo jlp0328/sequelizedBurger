@@ -23,19 +23,12 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 
-var connection;
-
-if(process.env.JAWSDB_URL){
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else{
-  connection = mysql.createConnection({
+var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
   database: "sequelizeburger_db"
-
-  });
-}
+});
 
 
 var routes = require("./controllers/burgers_controllers.js");
@@ -47,6 +40,3 @@ db.sequelize.sync().then(function() {
     console.log("App listening on PORT " + port);
   });
 });
-
-connection.connect();
-module.exports = connection;
