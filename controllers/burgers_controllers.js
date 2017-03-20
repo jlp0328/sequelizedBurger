@@ -4,6 +4,8 @@ var router = express.Router();
 
 var db = require("../models");
 
+var connection = require("../config/connection.js");
+
 // var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
