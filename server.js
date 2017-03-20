@@ -34,9 +34,6 @@ var connection = mysql.createConnection({
 var routes = require("./controllers/burgers_controllers.js");
 app.use("/", routes);
 
-// Starting our express app
-
-//Need to synchronize with the database. We do not want to run the database until the database has been initialized. Promise-based (.then)...Don't want to start server until we are connected to our database.
 
 db.sequelize.sync().then(function() {
   app.listen(port, function() {
