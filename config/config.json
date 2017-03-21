@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "w65s85frandhiqi1",
-    "password": "e45eylet9euv9my7",
-    "database": "sequelizeburger_db",
-    "host": "edo4plet5mhv93s3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }
