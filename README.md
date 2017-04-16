@@ -8,13 +8,12 @@ In this project, I created an application where users could add new burgers or "
 
 ## Technologies Used:
 
-MySQL
-Sequelize
-Node.js
-Express
-Handlebars
-CSS
-Google Fonts
+* MySQL
+* Sequelize
+* Node.js
+* Express
+* Handlebars
+* CSS
 
 ## Heroku Link:
 
